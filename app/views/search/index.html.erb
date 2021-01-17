@@ -15,10 +15,10 @@
   <% end %>
 <% end %>
 
-<section>
+<section id="results">
   <% @images.each do |image| %>
-    <div class="image">
+    <span class="image">
       <%= image_tag image.url %>
-    </div>
+    </span>
   <% end %>
 </section>

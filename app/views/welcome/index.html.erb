@@ -1,33 +1,35 @@
 <h1 id="app-name">Image Searcher</h1>
 
-<section id="search-text">
-  <h2>Search by Text</h2>
-  <%= form_tag "/search", method: :get do %>
-    <%= text_field_tag :text, "", placeholder: "Text" %>
-    <%= submit_tag "Search" %>
-  <% end %>
-</section>
-
-<section id="search-characteristics">
-  <h2>Search by Characteristics</h2>
-  <%= form_tag "/search", method: :get do %>
-    <%= text_field_tag :text, "", placeholder: "Text" %>
-    <h3>Dominant Color</h3>
-    <% @colors.each do |color| %>
-      <p><%= radio_button_tag 'color', "#{color}" %><%= color %></p>
+<div class="search-fields">
+  <section id="search-text">
+    <h2>Search by Text</h2>
+    <%= form_tag "/search", method: :get do %>
+      <%= text_field_tag :text, "", placeholder: "Text" %>
+      <%= submit_tag "Search" %>
     <% end %>
-    <h3>Aspect Ratio</h3>
-    <p><%= radio_button_tag 'aspect', "Square" %>Square</p>
-    <p><%= radio_button_tag 'aspect', "Wide" %>Wide</p>
-    <p><%= radio_button_tag 'aspect', "Tall" %>Tall</p>
-    <%= submit_tag "Search" %>
-  <% end %>
-</section>
+  </section>
 
-<section id="search-image">
-  <h2>Search by Similar Image</h2>
-  <%= form_tag "/search", method: :get do %>
-    <%= text_field_tag :image_url, "", placeholder: "Image URL" %>
-    <%= submit_tag "Search" %>
-  <% end %>
-</section>
+  <section id="search-characteristics">
+    <h2>Search by Characteristics</h2>
+    <%= form_tag "/search", method: :get do %>
+      <%= text_field_tag :text, "", placeholder: "Text" %>
+      <h3>Dominant Color</h3>
+      <% @colors.each do |color| %>
+        <p><%= radio_button_tag 'color', "#{color}" %><%= color %></p>
+      <% end %>
+      <h3>Aspect Ratio</h3>
+      <p><%= radio_button_tag 'aspect', "Square" %>Square</p>
+      <p><%= radio_button_tag 'aspect', "Wide" %>Wide</p>
+      <p><%= radio_button_tag 'aspect', "Tall" %>Tall</p>
+      <%= submit_tag "Search" %>
+    <% end %>
+  </section>
+
+  <section id="search-image">
+    <h2>Search by Similar Image</h2>
+    <%= form_tag "/search", method: :get do %>
+      <%= text_field_tag :image_url, "", placeholder: "Image URL" %>
+      <%= submit_tag "Search" %>
+    <% end %>
+  </section>
+</div>
