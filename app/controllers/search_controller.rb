@@ -1,6 +1,10 @@
 class SearchController < ApplicationController
   def index
-    @text = params[:text]
-    @images = ImageFacade.images_by_text(params[:text])
+    @params = search_params
+    @images = ImageFacade.images(search_params)
+  end
+
+  def search_params
+    params.permit(:text, :color, :aspect)
   end
 end
