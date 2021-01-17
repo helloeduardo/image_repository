@@ -21,7 +21,8 @@ describe 'As a visitor' do
       visit root_path
 
       within '#search-characteristics' do
-        expect(page).to have_field('characteristics')
+        expect(page).to have_field('color')
+        expect(page).to have_field('aspect')
         expect(page).to have_button('Search')
 
       end
