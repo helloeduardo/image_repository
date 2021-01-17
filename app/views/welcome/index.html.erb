@@ -9,9 +9,12 @@
 </section>
 
 <section id="search-characteristics">
-  <h2>Search by Characteristics</h2>
+  <h2>Search by Dominant Color</h2>
   <%= form_tag "/search", method: :get do %>
-    <%= text_field_tag :characteristics, "", placeholder: "Characteristics" %>
+    <%= text_field_tag :text, "", placeholder: "Text" %>
+    <% @colors.each do |color| %>
+      <p><%= radio_button_tag 'color', "#{color}" %><%= color %></p>
+    <% end %>
     <%= submit_tag "Search" %>
   <% end %>
 </section>
