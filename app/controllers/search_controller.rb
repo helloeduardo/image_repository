@@ -5,6 +5,6 @@ class SearchController < ApplicationController
   end
 
   def search_params
-    params.permit(:text, :color, :aspect)
+    params.permit(:text, :color, :aspect, :image_url)
   end
 end
