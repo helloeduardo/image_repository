@@ -18,6 +18,13 @@ $ figaro install
 
 Then add your Bing subscription key to the `application.yml` file as `BING_KEY_1: <your-api-key>`
 
+Start up a rails server using:
+```
+$ rails s
+```
+
+Then navigate to `localhost:3000` on your browser to view the app. Success! 🎉
+
 ## Functionality Screenshots
 
 ### Homepage
