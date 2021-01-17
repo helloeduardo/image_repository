@@ -2,15 +2,24 @@
 
 <section id="search-text">
   <h2>Search by Text</h2>
-
+  <%= form_tag "/search", method: :get do %>
+    <%= text_field_tag :text, "", placeholder: "Text" %>
+    <%= submit_tag "Search" %>
+  <% end %>
 </section>
 
 <section id="search-characteristics">
   <h2>Search by Characteristics</h2>
-
+  <%= form_tag "/search", method: :get do %>
+    <%= text_field_tag :characteristics, "", placeholder: "Characteristics" %>
+    <%= submit_tag "Search" %>
+  <% end %>
 </section>
 
 <section id="search-image">
   <h2>Search by Similar Image</h2>
-
+  <%= form_tag "/search", method: :get do %>
+    <%= text_field_tag :image_url, "", placeholder: "Image URL" %>
+    <%= submit_tag "Search" %>
+  <% end %>
 </section>
