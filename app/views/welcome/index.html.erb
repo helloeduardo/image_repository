@@ -9,12 +9,17 @@
 </section>
 
 <section id="search-characteristics">
-  <h2>Search by Dominant Color</h2>
+  <h2>Search by Characteristics</h2>
   <%= form_tag "/search", method: :get do %>
     <%= text_field_tag :text, "", placeholder: "Text" %>
+    <h3>Dominant Color</h3>
     <% @colors.each do |color| %>
       <p><%= radio_button_tag 'color', "#{color}" %><%= color %></p>
     <% end %>
+    <h3>Aspect Ratio</h3>
+    <p><%= radio_button_tag 'aspect', "Square" %>Square</p>
+    <p><%= radio_button_tag 'aspect', "Wide" %>Wide</p>
+    <p><%= radio_button_tag 'aspect', "Tall" %>Tall</p>
     <%= submit_tag "Search" %>
   <% end %>
 </section>

@@ -1,7 +1,9 @@
 class ImageService
-  def self.images_by_text(text)
+  def self.images(params)
     response = conn.get("v7.0/images/search") do |req|
-      req.params["q"] = text
+      req.params["q"] = params[:text]
+      req.params["color"] = params[:color] if params[:color]
+      req.params["aspect"] = params[:aspect] if params[:aspect]
     end
 
     JSON.parse(response.body, symbolize_names: true)[:value]

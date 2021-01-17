@@ -1,6 +1,15 @@
 <h1>Image Searcher</h1>
 
-<h2>Image Results for: <%= @text %></h2>
+<h2>Image Results For: <%= @params[:text] %></h2>
+<% if @params[:color] || @params[:aspect] %>
+  <h3>Characteristics:</h3>
+  <% if @params[:color] %>
+    <h4>Color: <%= @params[:color] %></h4>
+  <% end %>
+  <% if @params[:aspect] %>
+  <h4>Aspect Ratio: <%= @params[:aspect] %></h4>
+  <% end %>
+<% end %>
 
 <section>
   <% @images.each do |image| %>
