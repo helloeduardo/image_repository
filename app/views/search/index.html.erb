@@ -4,6 +4,8 @@
 
 <section>
   <% @images.each do |image| %>
-    <%= image_tag image.url %>
+    <div class="image">
+      <%= image_tag image.url %>
+    </div>
   <% end %>
 </section>
