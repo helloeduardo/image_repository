@@ -1,0 +1,9 @@
+<h1>Image Searcher</h1>
+
+<h2>Image Results for: <%= @text %></h2>
+
+<section>
+  <% @images.each do |image| %>
+    <%= image_tag image.url %>
+  <% end %>
+</section>
